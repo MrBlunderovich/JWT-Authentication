@@ -33,7 +33,7 @@ app.get("/api/pb", (req, res) => {
 const cors = require("cors");
 app.use(cors({ credentials: true }));
 
-app.post("/test-auth", (req, res) => {
+app.post("/api/test-auth", (req, res) => {
   res.json(req);
 });
 
