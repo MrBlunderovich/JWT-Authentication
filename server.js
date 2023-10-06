@@ -19,6 +19,10 @@ const posts = [
   },
 ];
 
+app.post("/test-auth", (req, res) => {
+  res.json(req);
+});
+
 app.get("/posts", authenticateToken, (req, res) => {
   res.json(posts.filter((post) => post.username === req.user.name));
 });
