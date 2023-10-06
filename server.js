@@ -3,8 +3,6 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const jwt = require("jsonwebtoken");
-const cors = require("cors");
-app.use(cors({ credentials: true }));
 
 app.use(express.json());
 
@@ -18,10 +16,6 @@ const posts = [
     title: "Post 2",
   },
 ];
-
-app.post("/test-auth", (req, res) => {
-  res.json(req);
-});
 
 app.get("/posts", authenticateToken, (req, res) => {
   res.json(posts.filter((post) => post.username === req.user.name));

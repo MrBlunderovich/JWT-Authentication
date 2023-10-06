@@ -30,6 +30,15 @@ app.get("/api/pb", (req, res) => {
 });
 ///////////////////////////////////////////////////////////////////////////
 
+const cors = require("cors");
+app.use(cors({ credentials: true }));
+
+app.post("/test-auth", (req, res) => {
+  res.json(req);
+});
+
+//////////////////////////////////////////////////////////////////////////
+
 //const jwt = require("jsonwebtoken");
 
 app.use(express.json());
