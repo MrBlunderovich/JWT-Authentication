@@ -38,7 +38,7 @@ app.post("/api/test-auth", (req, res) => {
 });
 
 app.get("/api/test-auth", (req, res) => {
-  res.json(req);
+  res.end("auth");
 });
 
 //////////////////////////////////////////////////////////////////////////
