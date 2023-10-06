@@ -10,7 +10,7 @@ app.get("/api", (req, res) => {
   const path = `/api/item/${v4()}`;
   res.setHeader("Content-Type", "text/html");
   res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
-  res.end(`Hello! Go to item: <a href="${path}">${path}</a>`);
+  res.end(`Hello! Go to item1: <a href="${path}">${path}</a>`);
 });
 
 app.get("/api/item/:slug", (req, res) => {
@@ -34,6 +34,10 @@ const cors = require("cors");
 app.use(cors({ credentials: true }));
 
 app.post("/api/test-auth", (req, res) => {
+  res.json(req);
+});
+
+app.get("/api/test-auth", (req, res) => {
   res.json(req);
 });
 
