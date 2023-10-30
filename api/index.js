@@ -95,12 +95,12 @@ app.get("/api/warehouse", (req, res) => {
   res.json(products);
 });
 
-app.get("/api/warehouse/options", (req, res) => {
-  res.json(warehouseOptions);
-});
-
 app.get("/api/distributors", (req, res) => {
   res.json(distributors);
+});
+
+app.get("/api/warehouse/options", (req, res) => {
+  res.json(warehouseOptions);
 });
 
 //nodemon ./api/index.js
