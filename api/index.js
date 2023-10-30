@@ -99,6 +99,10 @@ app.get("/api/distributor", (req, res) => {
   res.json(distributors);
 });
 
+app.get("/api/distributors", (req, res) => {
+  res.json(distributors);
+});
+
 app.get("/api/warehouse/options", (req, res) => {
   res.json(warehouseOptions);
 });
