@@ -93,7 +93,7 @@ const { distributors } = require("./distributors.js");
 
 function tenKdistributors() {
   const result = [];
-  for (let j = 0; j < 1000; j++) {
+  for (let j = 0; j < 10000; j++) {
     result.push({
       _id: v4(),
       name: "Болотбеков Алишер Калымович",
@@ -115,7 +115,7 @@ app.get("/api/distributors", (req, res) => {
   res.json(distributors);
 });
 
-app.get("/api/10000distributors", (req, res) => {
+app.get("/api/tenKdistributorsdistributors", (req, res) => {
   res.json(tenKdistributors());
 });
 
