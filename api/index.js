@@ -115,7 +115,7 @@ app.get("/api/distributors", (req, res) => {
   res.json(distributors);
 });
 
-app.get("/api/tenKdistributorsdistributors", (req, res) => {
+app.get("/api/tenKdistributors", (req, res) => {
   res.json(tenKdistributors());
 });
 
