@@ -93,7 +93,7 @@ const { distributors } = require("./distributors.js");
 
 function tenKdistributors() {
   const result = [];
-  for (let j = 0; j < 10000; j++) {
+  for (let j = 0; j < 1000; j++) {
     result.push({
       _id: v4(),
       name: "Болотбеков Алишер Калымович",
