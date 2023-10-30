@@ -91,6 +91,17 @@ const { products } = require("./products.js");
 const { warehouseOptions } = require("./warehouse-options.js");
 const { distributors } = require("./distributors.js");
 
+function tenKdistributors() {
+  const result = [];
+  for (let j = 0; j < 10000; j++) {
+    result.push({
+      _id: v4(),
+      name: "Болотбеков Алишер Калымович",
+      region: "Г. Ош ул. Камчыбекова Дом 68 этаж 4",
+    });
+  }
+}
+
 app.get("/api/warehouse", (req, res) => {
   res.json(products);
 });
@@ -101,6 +112,10 @@ app.get("/api/distributor", (req, res) => {
 
 app.get("/api/distributors", (req, res) => {
   res.json(distributors);
+});
+
+app.get("/api/10000distributors", (req, res) => {
+  res.json(tenKdistributors());
 });
 
 app.get("/api/warehouse/options", (req, res) => {
