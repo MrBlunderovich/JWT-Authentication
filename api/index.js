@@ -100,6 +100,7 @@ function tenKdistributors() {
       region: "Г. Ош ул. Камчыбекова Дом 68 этаж 4",
     });
   }
+  return result;
 }
 
 app.get("/api/warehouse", (req, res) => {
