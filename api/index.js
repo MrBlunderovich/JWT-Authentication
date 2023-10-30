@@ -6,6 +6,9 @@ const app = express();
 const { default: axios } = require("axios");
 const { v4 } = require("uuid");
 app.use(express.json());
+//
+const cors = require("cors");
+app.use(cors({ credentials: true }));
 
 app.get("/api", (req, res) => {
   const path = `/api/item/${v4()}`;
@@ -30,9 +33,6 @@ app.get("/api/pb", (req, res) => {
   //res.end(`Item: ${slug}`);
 });
 ///////////////////////////////////////////////////////////////////////////
-
-const cors = require("cors");
-app.use(cors({ credentials: true }));
 
 app.post("/api/test-auth", (req, res) => {
   console.log(req.body);
@@ -85,7 +85,7 @@ function generateAccessToken(user) {
 
 //app.listen(4000);
 
-/////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 
 const { products } = require("./products.js");
 const { warehouseOptions } = require("./warehouse-options.js");
@@ -104,7 +104,7 @@ app.get("/api/distributors", (req, res) => {
 });
 
 //nodemon ./api/index.js
-/////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 
 app.listen(2000);
 
