@@ -99,9 +99,9 @@ app.get("/api/distributors", (req, res) => {
   res.json(distributors);
 });
 
-app.get("/api/warehouse/options", (req, res) => {
+/* app.get("/api/warehouse/options", (req, res) => {
   res.json(warehouseOptions);
-});
+}); */
 
 //nodemon ./api/index.js
 ////////////////////////////////////////////////////////////////////////////
