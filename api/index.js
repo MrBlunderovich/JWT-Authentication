@@ -95,7 +95,7 @@ app.get("/api/warehouse", (req, res) => {
   res.json(products);
 });
 
-app.get("/api/distributorsss", (req, res) => {
+app.get("/api/distributor", (req, res) => {
   res.json(distributors);
 });
 
