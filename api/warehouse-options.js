@@ -1,13 +1,12 @@
 const warehouseOptions = {
   category: [
-    { value: "all", label: "Все товары" },
+    { value: "", label: "Все товары" },
     { value: "alcohol", label: "Алкогольные" },
-    { value: "nonalcohol", label: "Безалкогольные" },
-    { value: "raw", label: "Сырье" },
+    { value: "notAlcohol", label: "Безалкогольные" },
   ],
   condition: [
-    { value: "norm", label: "Норма" },
-    { value: "defect", label: "Брак" },
+    { value: "Normal", label: "Норма" },
+    { value: "Invalid", label: "Брак" },
   ],
 };
 
