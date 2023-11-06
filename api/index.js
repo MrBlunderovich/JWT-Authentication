@@ -89,6 +89,7 @@ function generateAccessToken(user) {
 
 const { products } = require("./products.js");
 const { warehouseOptions } = require("./warehouse-options.js");
+const { allOptions } = require("./all-options.js");
 const { distributors } = require("./distributors.js");
 
 function tenKdistributors() {
@@ -121,6 +122,10 @@ app.get("/api/tenKdistributors", (req, res) => {
 
 app.get("/api/warehouse/options", (req, res) => {
   res.json(warehouseOptions);
+});
+
+app.get("/api/options", (req, res) => {
+  res.json(allOptions);
 });
 
 //nodemon ./api/index.js
