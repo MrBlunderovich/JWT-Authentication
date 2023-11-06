@@ -4,10 +4,6 @@ const allOptions = {
     { value: "alcohol", label: "Алкогольные" },
     { value: "notAlcohol", label: "Безалкогольные" },
   ],
-  condition: [
-    { value: "Normal", label: "Норма" },
-    { value: "Invalid", label: "Брак" },
-  ],
   region: [
     { value: "Баткен", label: "Баткен" },
     { value: "Джалал-Абад", label: "Джалал-Абад" },
@@ -16,6 +12,12 @@ const allOptions = {
     { value: "Ош", label: "Ош" },
     { value: "Талас", label: "Талас" },
     { value: "Чуй", label: "Чуй" },
+  ],
+  unit: [
+    { value: "item", label: "Штука" },
+    { value: "kilogram", label: "Килограмм" },
+    { value: "liter", label: "Литр" },
+    { value: "m", label: "Метр" },
   ],
 };
 
