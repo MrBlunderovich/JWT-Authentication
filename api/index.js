@@ -140,6 +140,10 @@ app.post("/api/search-options", (req, res) => {
   const inputData = req.body; // JSON data from the request body
   console.log(inputData);
 
+  if (inputData.search === "") {
+    return res.json([]);
+  }
+
   if (!inputData || !inputData.search) {
     return res.status(400).json({ error: "Invalid or missing data" });
   }
