@@ -107,8 +107,9 @@ function tenKdistributors() {
 
 function getSearchOptions(query) {
   const regex = new RegExp(`\\s\\w*${query}\\w*\\s`, "ig");
-  const result = lorem.match(regex);
-  return result || [];
+  const results = lorem.match(regex) || [];
+  const uniqueResults = [...new Set(results)];
+  return uniqueResults;
 }
 
 app.get("/api/warehouse", (req, res) => {
