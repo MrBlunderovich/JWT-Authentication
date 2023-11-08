@@ -91,6 +91,7 @@ const { products } = require("./products.js");
 const { warehouseOptions } = require("./warehouse-options.js");
 const { allOptions } = require("./all-options.js");
 const { distributors } = require("./distributors.js");
+const { lorem } = require("./lorem.js");
 
 function tenKdistributors() {
   const result = [];
@@ -102,6 +103,12 @@ function tenKdistributors() {
     });
   }
   return result;
+}
+
+function getSearchOptions(query) {
+  const regex = new RegExp(`\\s\\w*${query}\\w*\\s`, "ig");
+  const result = lorem.match(regex);
+  return result || [];
 }
 
 app.get("/api/warehouse", (req, res) => {
@@ -126,6 +133,21 @@ app.get("/api/warehouse/options", (req, res) => {
 
 app.get("/api/options", (req, res) => {
   res.json(allOptions);
+});
+
+app.post("/api/search-options", (req, res) => {
+  const inputData = req.body; // JSON data from the request body
+  console.log(inputData);
+
+  if (!inputData || !inputData.search) {
+    return res.status(400).json({ error: "Invalid or missing data" });
+  }
+
+  // Perform manipulation, for example, multiply by 2
+  const options = getSearchOptions(inputData.search);
+
+  // Send the result in the response
+  res.json(options);
 });
 
 //nodemon ./api/index.js
