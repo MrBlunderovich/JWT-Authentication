@@ -87,7 +87,7 @@ function generateAccessToken(user) {
 
 ////////////////////////////////////////////////////////////////////////////
 
-const { products } = require("./products.js");
+const { products, orders, returns } = require("./products.js");
 const { warehouseOptions } = require("./warehouse-options.js");
 const { allOptions } = require("./all-options.js");
 const { distributors } = require("./distributors.js");
@@ -153,6 +153,16 @@ app.post("/api/search-options", (req, res) => {
 
   // Send the result in the response
   res.json(options);
+});
+
+app.get("/api/distributor/orders/:id", (req, res) => {
+  console.log(req.params.id);
+  res.json(orders);
+});
+
+app.get("/api/distributor/returns/:id", (req, res) => {
+  console.log(req.params.id);
+  res.json(returns);
 });
 
 //nodemon ./api/index.js
