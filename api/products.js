@@ -30,8 +30,9 @@ function generateProducts(number) {
 
 const orders = generateProducts(30);
 const returns = generateProducts(30);
+const products = generateProducts(50);
 
-const products = [
+const products_ = [
   {
     id: v4(),
     name: "Кега 30 литров",

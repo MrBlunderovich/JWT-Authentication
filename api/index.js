@@ -165,6 +165,10 @@ app.get("/api/distributor/returns/:id", (req, res) => {
   res.json(returns);
 });
 
+app.get("/api/products", (req, res) => {
+  res.json(products);
+});
+
 //nodemon ./api/index.js
 ////////////////////////////////////////////////////////////////////////////
 
