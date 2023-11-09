@@ -157,15 +157,26 @@ app.post("/api/search-options", (req, res) => {
 
 app.get("/api/distributor/orders/:id", (req, res) => {
   console.log(req.params.id);
-  res.json(orders);
+  const categoryParam = req.query.category;
+  const result = categoryParam
+    ? orders.filter((item) => item.category === categoryParam)
+    : orders;
+  res.json(result);
 });
 
 app.get("/api/distributor/returns/:id", (req, res) => {
   console.log(req.params.id);
-  res.json(returns);
+  const categoryParam = req.query.category;
+  const result = categoryParam
+    ? returns.filter((item) => item.category === categoryParam)
+    : returns;
+  res.json(result);
 });
 
 app.get("/api/products", (req, res) => {
+  /* for(let key in queryParams){
+
+} */
   res.json(products);
 });
 
