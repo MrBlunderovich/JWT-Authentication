@@ -38,10 +38,10 @@ function createProduct() {
   };
 } */
 
-function createBeer() {
+function createBeer(suffix = "") {
   return {
     id: v4(),
-    name: "Пиво 1.5 литра",
+    name: "Пиво 1.5 литра" + suffix,
     identification_number: 30000000 + randomNumber(999999),
     unit: "шт",
     quantity: randomNumber(),
@@ -53,10 +53,10 @@ function createBeer() {
   };
 }
 
-function createKvass() {
+function createKvass(suffix = "") {
   return {
     id: v4(),
-    name: "Квас 1 литр",
+    name: "Квас 1 литр" + suffix,
     identification_number: 30000000 + randomNumber(999999),
     unit: "шт",
     quantity: randomNumber(),
@@ -68,19 +68,19 @@ function createKvass() {
   };
 }
 
-function generateProducts(beerQuantity = 20, kvassQuantity = 10) {
+function generateProducts(suffix = "", beerQuantity = 20, kvassQuantity = 10) {
   const result = [];
   for (let i = 1; i <= beerQuantity; i++) {
-    result.push(createBeer());
+    result.push(createBeer(suffix));
   }
   for (let i = 1; i <= kvassQuantity; i++) {
-    result.push(createKvass());
+    result.push(createKvass(suffix));
   }
   return result;
 }
 
-const orders = generateProducts();
-const returns = generateProducts();
+const orders = generateProducts(" (заказ)");
+const returns = generateProducts(" (возврат)");
 const productos = generateProducts();
 
 module.exports = { productos, orders, returns };

@@ -125,7 +125,7 @@ app.get("/api/distributor/returns/:id", (req, res) => {
     end_date: endDateParam,
   } = req.query;
   //
-  const result = orders.filter((item) => {
+  const result = returns.filter((item) => {
     return (
       (!categoryParam || item.category === categoryParam) &&
       (!startDateParam ||
