@@ -38,6 +38,10 @@ app.get("/api/warehouse", (req, res) => {
   res.json(products);
 });
 
+app.get("/api/products", (req, res) => {
+  res.json(products);
+});
+
 app.get("/api/distributor", (req, res) => {
   res.json(distributors);
 });
@@ -89,11 +93,6 @@ app.get("/api/distributor/returns/:id", (req, res) => {
     ? returns.filter((item) => item.category === categoryParam)
     : returns;
   res.json(result);
-});
-
-app.get("/api/products", (req, res) => {
-  console.log(products);
-  res.json(products);
 });
 
 //nodemon ./api/index.js
