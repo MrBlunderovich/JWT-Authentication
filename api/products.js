@@ -1,6 +1,13 @@
 const { v4 } = require("uuid");
 const { faker } = require("@faker-js/faker");
-const moment = require("moment");
+
+function formatDate(date) {
+  return date.toLocaleDateString("fr-CA", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+}
 
 function randomNumber(max = 100) {
   return Math.floor(Math.random() * max + 1);
@@ -34,16 +41,8 @@ function createBeer() {
     quantity: randomNumber(),
     price: 200,
     category: "alcohol",
-    order_date: faker.date.past().toLocaleDateString("fr-CA", {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-    }),
-    return_date: faker.date.past().toLocaleDateString("fr-CA", {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-    }),
+    order_date: formatDate(faker.date.past()),
+    return_date: formatDate(faker.date.past()),
     state: randomBoolean() ? "Норма" : "Брак",
   };
 }
@@ -57,8 +56,8 @@ function createKvass() {
     quantity: randomNumber(),
     price: 100,
     category: "notAlcohol",
-    order_date: moment(faker.date.past()).format("YYYY-MM-DD"),
-    return_date: moment(faker.date.past()).format("YYYY-MM-DD"),
+    order_date: formatDate(faker.date.past()),
+    return_date: formatDate(faker.date.past()),
     state: randomBoolean() ? "Норма" : "Брак",
   };
 }
