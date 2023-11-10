@@ -35,7 +35,7 @@ function getSearchOptions(query) {
 }
 
 app.get("/api/warehouse", (req, res) => {
-  res.json(productos);
+  res.json({ results: productos });
 });
 
 app.get("/api/products", (req, res) => {
