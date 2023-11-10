@@ -4,10 +4,10 @@ const { default: axios } = require("axios");
 const { v4 } = require("uuid");
 const cors = require("cors");
 /////////////////////////////////////////
-const { products, orders, returns } = require("./products.js");
+const { productos, orders, returns } = require("./products.js");
 const { warehouseOptions } = require("./warehouse-options.js");
 const { allOptions } = require("./all-options.js");
-const { distributors } = require("./distributors.js");
+const { distributores } = require("./distributors.js");
 const { lorem } = require("./lorem.js");
 ////////////////////////////////////////////
 
@@ -35,19 +35,19 @@ function getSearchOptions(query) {
 }
 
 app.get("/api/warehouse", (req, res) => {
-  res.json(products);
+  res.json(productos);
 });
 
 app.get("/api/products", (req, res) => {
-  res.json(products);
+  res.json(productos);
 });
 
 app.get("/api/distributor", (req, res) => {
-  res.json(distributors);
+  res.json(distributores);
 });
 
 app.get("/api/distributors", (req, res) => {
-  res.json(distributors);
+  res.json(distributores);
 });
 
 app.get("/api/warehouse/options", (req, res) => {

@@ -123,4 +123,4 @@ const distributors = [
   },
 ];
 
-module.exports = { distributors };
+module.exports = { distributores };

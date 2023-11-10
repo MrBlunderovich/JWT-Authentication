@@ -81,9 +81,9 @@ function generateProducts(beerQuantity = 20, kvassQuantity = 10) {
 
 const orders = generateProducts();
 const returns = generateProducts();
-const products = generateProducts();
+const productos = generateProducts();
 
-module.exports = { default: sayHello, products, orders, returns };
+module.exports = { default: sayHello, productos, orders, returns };
 
 /* const products_ = [
   {
