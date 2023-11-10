@@ -7,6 +7,9 @@ const { v4 } = require("uuid");
     day: "2-digit",
   });
 } */
+function sayHello() {
+  return "Hello!";
+}
 
 function createDate() {
   return `2023-${randomNumber(12)}-${randomNumber(31)}`;
@@ -80,7 +83,7 @@ const orders = generateProducts();
 const returns = generateProducts();
 const products = generateProducts();
 
-module.exports = { products, orders, returns };
+module.exports = { default: sayHello, products, orders, returns };
 
 /* const products_ = [
   {

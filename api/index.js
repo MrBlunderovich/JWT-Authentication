@@ -92,9 +92,7 @@ app.get("/api/distributor/returns/:id", (req, res) => {
 });
 
 app.get("/api/products", (req, res) => {
-  /* for(let key in queryParams){
-
-} */
+  console.log(products);
   res.json(products);
 });
 
