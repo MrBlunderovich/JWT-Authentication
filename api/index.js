@@ -78,23 +78,64 @@ app.post("/api/search-options", (req, res) => {
 });
 
 app.get("/api/distributor/orders/:id", (req, res) => {
-  console.log(req.params.id);
-  const categoryParam = req.query.category;
-  const result = categoryParam
+  //console.log(req.params.id);
+  const {
+    category: categoryParam,
+    start_date: startDateParam,
+    end_date: endDateParam,
+  } = req.query;
+  //
+  const result = orders.filter((item) => {
+    return (
+      (!categoryParam || item.category === categoryParam) &&
+      (!startDateParam ||
+        new Date(item.order_date) > new Date(startDateParam)) &&
+      (!endDateParam || new Date(item.order_date) < new Date(endDateParam))
+    );
+  });
+  //
+  res.json(result);
+
+  //////////////////////////////////////////////
+  /* const catResult = categoryParam
     ? orders.filter((item) => item.category === categoryParam)
     : orders;
-  res.json(result);
+  console.log(catResult.length);
+  const startResult = startDateParam
+    ? catResult.filter(
+        (item) => new Date(item.order_date) > new Date(startDateParam)
+      )
+    : catResult;
+  console.log(startResult.length);
+  const endResult = endDateParam
+    ? startResult.filter(
+        (item) => new Date(item.order_date) < new Date(endDateParam)
+      )
+    : startResult;
+  console.log(endResult.length); */
+
+  //res.json(endResult);
 });
 
 app.get("/api/distributor/returns/:id", (req, res) => {
-  console.log(req.params.id);
-  const categoryParam = req.query.category;
-  const result = categoryParam
-    ? returns.filter((item) => item.category === categoryParam)
-    : returns;
+  //console.log(req.params.id);
+  const {
+    category: categoryParam,
+    start_date: startDateParam,
+    end_date: endDateParam,
+  } = req.query;
+  //
+  const result = orders.filter((item) => {
+    return (
+      (!categoryParam || item.category === categoryParam) &&
+      (!startDateParam ||
+        new Date(item.return_date) > new Date(startDateParam)) &&
+      (!endDateParam || new Date(item.return_date) < new Date(endDateParam))
+    );
+  });
+  //
   res.json(result);
 });
-
 //nodemon ./api/index.js
 ////////////////////////////////////////////////////////////////////////////
 
