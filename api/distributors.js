@@ -1,6 +1,6 @@
 const { v4 } = require("uuid");
 
-const distributors = [
+const distributores = [
   {
     _id: v4(),
     name: "Болотбеков Алишер Калымович",
