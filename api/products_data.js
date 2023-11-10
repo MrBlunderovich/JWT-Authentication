@@ -83,7 +83,7 @@ const orders = generateProducts();
 const returns = generateProducts();
 const productos = generateProducts();
 
-module.exports = { default: sayHello, productos, orders, returns };
+module.exports = { productos, orders, returns };
 
 /* const products_ = [
   {

@@ -4,10 +4,10 @@ const { default: axios } = require("axios");
 const { v4 } = require("uuid");
 const cors = require("cors");
 /////////////////////////////////////////
-const { productos, orders, returns } = require("./products.js");
+const { productos, orders, returns } = require("./products_data.js");
 const { warehouseOptions } = require("./warehouse-options.js");
 const { allOptions } = require("./all-options.js");
-const { distributores } = require("./distributors.js");
+const { distributores } = require("./distributors_data.js");
 const { lorem } = require("./lorem.js");
 ////////////////////////////////////////////
 
