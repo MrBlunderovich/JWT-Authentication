@@ -1,12 +1,15 @@
 const { v4 } = require("uuid");
-const { faker } = require("@faker-js/faker");
 
-function formatDate(date) {
+/* function formatDate(date) {
   return date.toLocaleDateString("fr-CA", {
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
   });
+} */
+
+function createDate() {
+  return `2023-${randomNumber(12)}-${randomNumber(31)}`;
 }
 
 function randomNumber(max = 100) {
@@ -16,7 +19,7 @@ function randomNumber(max = 100) {
 function randomBoolean() {
   return Math.random() >= 0.5;
 }
-
+/* 
 function createProduct() {
   return {
     id: v4(),
@@ -30,7 +33,7 @@ function createProduct() {
     return_date: faker.date.past().toLocaleDateString("rus"),
     state: randomBoolean() ? "Норма" : "Брак",
   };
-}
+} */
 
 function createBeer() {
   return {
@@ -41,8 +44,8 @@ function createBeer() {
     quantity: randomNumber(),
     price: 200,
     category: "alcohol",
-    order_date: formatDate(faker.date.past()),
-    return_date: formatDate(faker.date.past()),
+    order_date: createDate(),
+    return_date: createDate(),
     state: randomBoolean() ? "Норма" : "Брак",
   };
 }
@@ -56,8 +59,8 @@ function createKvass() {
     quantity: randomNumber(),
     price: 100,
     category: "notAlcohol",
-    order_date: formatDate(faker.date.past()),
-    return_date: formatDate(faker.date.past()),
+    order_date: createDate(),
+    return_date: createDate(),
     state: randomBoolean() ? "Норма" : "Брак",
   };
 }
