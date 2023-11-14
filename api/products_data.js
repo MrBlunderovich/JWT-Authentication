@@ -82,10 +82,14 @@ function generateProducts(suffix = "", beerQuantity = 30, kvassQuantity = 20) {
 }
 
 function randomizeCondition(data) {
-  return data.map((item) => ({
-    ...item,
-    state: randomBoolean() ? "Норма" : "Брак",
-  }));
+  return data.map((item) => {
+    const condition = randomBoolean() ? "Норма" : "Брак";
+    return {
+      ...item,
+      name: item.name + " " + condition,
+      state: condition,
+    };
+  });
 }
 
 const orders = generateProducts(" (заказ)");
