@@ -49,7 +49,8 @@ function createBeer(suffix = "") {
     category: "alcohol",
     order_date: createDate(),
     return_date: createDate(),
-    state: randomBoolean() ? "Норма" : "Брак",
+    state: "Норма",
+    //state: randomBoolean() ? "Норма" : "Брак",
   };
 }
 
@@ -64,7 +65,8 @@ function createKvass(suffix = "") {
     category: "notAlcohol",
     order_date: createDate(),
     return_date: createDate(),
-    state: randomBoolean() ? "Норма" : "Брак",
+    state: "Норма",
+    //state: randomBoolean() ? "Норма" : "Брак",
   };
 }
 
