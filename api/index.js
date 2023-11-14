@@ -46,7 +46,7 @@ app.get("/api/warehouse", (req, res) => {
   //
   //res.json(result);
 
-  res.json({ results, queryParams: req.query });
+  res.json({ queryParams: req.query, results });
 });
 
 app.get("/api/products", (req, res) => {
