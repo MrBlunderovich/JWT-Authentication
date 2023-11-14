@@ -70,7 +70,7 @@ function createKvass(suffix = "") {
   };
 }
 
-function generateProducts(suffix = "", beerQuantity = 20, kvassQuantity = 10) {
+function generateProducts(suffix = "", beerQuantity = 30, kvassQuantity = 20) {
   const result = [];
   for (let i = 1; i <= beerQuantity; i++) {
     result.push(createBeer(suffix));
@@ -81,9 +81,16 @@ function generateProducts(suffix = "", beerQuantity = 20, kvassQuantity = 10) {
   return result;
 }
 
+function randomizeCondition(data) {
+  return data.map((item) => ({
+    ...item,
+    state: randomBoolean() ? "Норма" : "Брак",
+  }));
+}
+
 const orders = generateProducts(" (заказ)");
 const returns = generateProducts(" (возврат)");
-const productos = generateProducts();
+const productos = randomizeCondition(generateProducts());
 
 module.exports = { productos, orders, returns };
 
