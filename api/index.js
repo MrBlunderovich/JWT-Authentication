@@ -36,7 +36,7 @@ function getSearchOptions(query) {
 
 app.get("/api/warehouse", (req, res) => {
   const { category: categoryParam, state } = req.query;
-  const conditionParam = state === norm ? "Норма" : "Брак";
+  const conditionParam = state === "norm" ? "Норма" : "Брак";
   //
   const results = productos.filter((item) => {
     return (
