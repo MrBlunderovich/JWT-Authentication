@@ -37,18 +37,16 @@ function getSearchOptions(query) {
 app.get("/api/warehouse", (req, res) => {
   const { category: categoryParam, condition: conditionParam } = req.query;
   //
-  const results = productos
-    .filter((item) => {
-      return (
-        (!categoryParam || item.category === categoryParam) &&
-        (!conditionParam || item.state === conditionParam)
-      );
-    })
-    .concat([{ ...req.query }]);
+  const results = productos.filter((item) => {
+    return (
+      (!categoryParam || item.category === categoryParam) &&
+      (!conditionParam || item.state === conditionParam)
+    );
+  });
   //
   //res.json(result);
 
-  res.json({ results });
+  res.json({ results, queryParams: req.query });
 });
 
 app.get("/api/products", (req, res) => {
