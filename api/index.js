@@ -35,7 +35,15 @@ function getSearchOptions(query) {
 }
 
 app.get("/api/warehouse", (req, res) => {
-  res.json({ results: productos });
+  const { category: categoryParam } = req.query;
+  //
+  const results = productos.filter((item) => {
+    return !categoryParam || item.category === categoryParam;
+  });
+  //
+  //res.json(result);
+
+  res.json({ results });
 });
 
 app.get("/api/products", (req, res) => {
