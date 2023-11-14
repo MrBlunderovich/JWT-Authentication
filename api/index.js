@@ -55,11 +55,11 @@ app.get("/api/products", (req, res) => {
 });
 
 app.get("/api/distributor", (req, res) => {
-  res.json({ results: distributores });
+  res.json(distributores);
 });
 
 app.get("/api/distributors", (req, res) => {
-  res.json(distributores);
+  res.json({ results: distributores });
 });
 
 app.get("/api/warehouse/options", (req, res) => {
